@@ -1,0 +1,294 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		
+		<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script> 
+		<link href="img/icon.svg" rel="shortcut icon" type="image/x-icon">
+		
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery_cmhello.js"></script>
+        <link rel="stylesheet"  href="css/login.css">
+		<link rel="stylesheet" href="css/header.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<title>知我药妆</title>
+		<style>
+.footer-span{
+	width: 100%; 
+	background-color: white;
+	float:left;
+	margin-top: 10px;}
+	
+		</style>
+
+	</head>
+	<body onload="givetime()">
+		<div class="wrap">
+			<div class="header">
+				<div class="top">
+					<div class="topnav">
+     
+						<div class="topnav-left">
+							<ul>
+								<li>欢迎来到知我！这里，用专业呵护美丽。</li>
+								<li><a href="#">请登录</a></li>
+								<li><a href="zhuce.html">免费注册</a></li>
+							</ul>
+							
+						</div>
+						<div id="navmenu">
+							<ul  class="navmenu-title">
+								<li id="navmenu-title-list" class="navmenu-title-list-1"><div class="phone"><img src="img/phone.png" id="Image1"></div>手机知我</li>
+								<li id="navmenu-title-list" class="navmenu-title-list-2">微信商城</a>
+									<ul class="navmenu-title-down">
+										<li id="navmenu-title-down-2-1" class="navmenu-title-list-2-1"><img src="img/android_ewm.png" style="width: 80px;height: 80px;" /></li>
+									</ul>
+								</li>
+								<li id="navmenu-title-list" class="navmenu-title-list-3">我的小窝</a>
+									<ul class="navmenu-title-down">
+										<li id="navmenu-title-down-3-1" class="navmenu-title-list-3-1"><a href="#">我的订单</a></li>
+										<li id="navmenu-title-down-3-2" class="navmenu-title-list-3-2"><a href="#">我的优惠券</a></li>
+										<li id="navmenu-title-down-3-3" class="navmenu-title-list-3-3"><a href="#">我的收藏</a></li>
+										<li id="navmenu-title-down-3-4" class="navmenu-title-list-3-4"><a href="#">我的预订</a></li>
+										<li id="navmenu-title-down-3-5" class="navmenu-title-list-3-5"><a href="#">我的积分</a></li>
+									</ul>
+								</li>
+								<li id="navmenu-title-list" class="navmenu-title-list-4">客户服务</a>
+									<ul class="navmenu-title-down">
+										<li id="navmenu-title-down-4-2" class="navmenu-title-list-4-2"><a href="#">帮助中心</a></li>
+										<li id="navmenu-title-down-4-3" class="navmenu-title-list-4-3"><a href="#">新浪微博</a></li>
+										<li id="navmenu-title-down-4-4" class="navmenu-title-list-4-4"><a href="#">正品承诺</a></li>
+										<li id="navmenu-title-down-4-5" class="navmenu-title-list-4-5"><a href="#">防伪查询</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<div class="headfoot">
+				
+				<div class="headpic">
+					
+				    <div class="leftpic">
+					   <a href="index.html"> <img  src="img/logo.jpg"></a>
+				    </div>
+				    <div class="rightpic">
+					    <img src="img/tipinfo.jpg">
+				    </div>
+				
+				</div>
+				
+			</div>
+		</div>
+		<div class="login">
+										
+			<div class="loginbox">
+				<div class="loginboxframe">
+					<div class="lgboxtitle">
+						<span style="font-size: 24px;color: #000;">登录</span>
+						<a href="zhuce.html" class="mianfeizhuce">免费注册</a>
+					</div>
+					<div class="lgboxmassege">
+						
+						<div class="zhanghao">
+							<p><label class="login-username">账号</label></p>
+							<p class="txt1"><input class="name_txt" type="text" id="login-username" value="" placeholder="请输入用户名/邮箱/手机号" name="username"></p>
+						</div>
+						<div class="mima">
+							<p><label class="login-usermima">密码</label></p>
+							<p class="txt2"><input class="mima_txt" type="text" id="login-usermima" value="" placeholder="请输入密码" name="usermima"></p>
+						</div>
+						<div class="yanzhengma">
+							<p><label class="login-usercheck">验证码</label></p><br>
+							<p class="txt3"><input class="check_txt" type="text" id="login-usercheck" value="" placeholder="请输入验证码" name="usercheck"> 
+								<img id="code" src="img/verifycode.png" alt="验证码">
+								<span id="change_code">换一张</span>
+							</p>
+						</div>
+						
+						<div id="operate">
+							<p class="autologin">
+							    <input type="checkbox" id="check_box">
+							    <label class="checked" for="check_box">自动登录</label>
+							</p>
+							<p class="forget_password"><a href="#">忘记密码？</a></p>
+						</div>
+						
+						<div class="loginbtn">
+								<p><a class="successd"  href="index.html" ><input type="submit" value="登录"></a></p>
+						</div>
+					
+					</div>
+					
+					<div class="other">
+						
+			        <p>合作网站账号登录</p>
+			        
+			        <ul class="otherli">
+			        	<li class="qq"><a href="#">QQ</a></li>
+			        	<li class="alipay"><a href="#">支付宝</a></li>
+					    <li class="sina"><a href="#">新浪微博</a></li>
+					    <li class="t360"><a href="#">360</a></li>
+					    <li class="baidu"><a href="#">百度</a></li>
+						<li class="renren"><a href="#">人人</a></li>
+						<li class="xunlei"><a href="#">迅雷</a></li>
+						
+			        </ul>
+			        
+		            </div>	
+				</div>
+			
+		
+				
+			</div>
+		 
+		</div>
+		
+		<!--<div class="foot">-->
+			<div class="footer-span">
+		    	<div class="footer-span-title-1">
+		    		
+		        <dl>
+		    		<dt><b>真品保证</b></dt>
+		    		<dd>品牌合作</dd>
+		    		<dd>严格把关</dd>
+		    		<dd>百度投资</dd>
+		    		<dd>全球品牌直供</dd>
+		    	</dl>
+		    	<dl>
+		    		<dt><b>30天包退</b></dt>
+		    		<dd>退换货政策</dd>
+		    		<dd>办理退换货</dd>
+		    		<dd>售后服务</dd>
+		    	</dl>
+		    	<dl>
+		    		<dt><b>2件包邮</b></dt>
+		    		<dd>配送政策</dd>
+		    		<dd>快递查询</dd>
+		    	</dl>
+		    	<dl>
+		    		<dt><b>药妆专柜</b></dt>
+		    		<dd>肤质判定</dd>
+		    		<dd>肌肤问题</dd>
+		    		<dd>达人推荐</dd>
+		    		<dd>护肤常识</dd>
+		    	</dl>
+		    	<dl>
+		    		<dt><b>关于知我</b></dt>
+		    		<dd>知我介绍</dd>
+		    		<dd>商务合作</dd>
+		    		<dd>友情链接</dd>
+		    		<dd>开放API</dd>
+		    	</dl>
+		    	<dl>
+		    		<dt><b>新手指南</b></dt>
+		    		<dd>购物流程</dd>
+		    		<dd>支付方式</dd>
+		    		<dd>化妆品品牌大全</dd>
+		    	</dl>
+		    	<dl>
+		    		<dt><b>联系方式</b></dt>
+		    		<dd>在线客服咨询</dd>
+		    		<dt><b>支付方式</b></dt>
+		    		<dd><span>400-630-1018</span></dd>
+		    		<dd><span>010-65389618</span></dd>
+		    	</dl>
+		    	<dl>
+		    		<dt><b>知我微信商城</b></dt>
+		    		<dd><img src="img/android_ewm.png"></dd>
+		    	</dl>
+		    	</div>	
+		    </div>
+		</div>
+		<div class="footer"> 
+		    	<div class="footer-title-1">
+		    		<img src="img/footer-title_1.png">
+		    	</div>
+		    	<div class="footer-title-2">
+		    		<img src="img/footer-title_2.png">
+		    	</div>
+		    </div>
+	<!--</div>	-->
+		
+	
+		
+		
+		
+		
+		<!--倒计时-->
+		<!--<script>
+			setInterval("timer()",1000); // 每隔1S执行一次
+			function timer(){ 
+				var ts = (new Date(2017, 0, 12, 23, 0, 0)) - (new Date());        //设置目标时间，并计算剩余的毫秒数
+				var dd = parseInt(ts / 1000 / 60 / 60 / 24, 10);                 //计算剩余天数 
+				var hh = parseInt(ts / 1000 / 60 / 60 % 24, 10);                //计算剩余小时 
+				var mm = parseInt(ts / 1000 / 60 % 60, 10);                    //计算剩余分钟 
+				var ss = parseInt((ts / 1000 ) % 60 , 10);                    //秒数 
+				dd = checkTime(dd);
+				hh = checkTime(hh);
+				mm = checkTime(mm);
+				ss = checkTime(ss); //重写数字
+				$("#less_day").html(dd); 
+				$("#less_hour").html(hh);
+				$("#less_minutes").html(mm);
+				$("#less_seconds").html(ss);
+			}
+			function checkTime(i){
+				if (i < 10) {
+					i = "0" + i;
+				}
+				return i;
+			}
+		</script>	
+		-->
+
+	<!--<script src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+	<script>
+	$(function(){
+		$('.left').click(function(){
+			var left=$('.box').scrollLeft();
+			$('.box').scrollLeft(left-1100);
+		})
+		$('.right').click(function(){
+			var right=$('.box').scrollLeft();
+			$('.box').scrollLeft(right+1100);
+		})
+	})
+	</script>
+    <script>
+
+        //添加购物车事件
+        $(".put-cart").bind('click',function(){
+            beheActiveEvent({at:"buy",src:"1697005908",cid:"",sid:"2340.2227"});
+        });
+        $("#btn_add_cart").bind('click',function(){
+            beheActiveEvent({at:"buy",src:"1697005908",cid:"",sid:"2340.2227"});
+        });
+     
+    
+</script>-->
+<!--验证码javascript-->
+	<script src="js/jquery-1.4.2.min.js"></script>
+	<script>
+	    $(function(){
+			var i=0;
+			var arr=['verifycode','verifycode2','verifycode3','verifycode4','verifycode5','verifycode6'];
+            $('#change_code').click(function(){ 
+             if(i>arr.length-1){
+			 i=0;}
+             $('#code').attr('src','img/'+arr[i]+'.png')
+                 i++;
+			})
+		})	
+		
+		
+		 $(function(){
+		 	 $('.loginbtn').click(function(){
+		 	 	alter("注册成功！跳转到知我首页");
+		 	})	
+		})
+	</script>
+	
+	</body>
+</html>

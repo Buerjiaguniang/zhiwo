@@ -1,0 +1,91 @@
+.zuocebianlan {
+	height: 100px;
+	width: 100%;
+    margin-left:20px ;
+}
+
+
+
+.side_nav ul,
+li {
+	list-style: none;
+}
+
+.side_nav li {
+	width: 60px;
+	height: 60px;
+	background: #fff;
+	text-align: center;
+	margin-bottom: 1px;
+}
+
+.side_nav li a {
+	font-size: 14px;
+	color: #6c6c6c;
+	width: 59px;
+	height: 60px;
+	display: block;
+	border-bottom: 1px #c4c4c4 double;
+}
+
+.side_nav li a {
+	text-decoration: none;
+	outline: none;
+}
+
+ 
+
+
+
+.side_nav {
+    position: fixed;  
+/*	left: 10px;*/
+	/*margin-left: -625px;*/
+     top:200px;  
+     display: none;
+ 
+ 
+	
+}
+
+ 
+
+
+.side_nav .snav_zhiwo_index {
+	background: #00c8ff;
+}
+
+.side_nav .snav_zhiwo_index a {
+	color: #fff;
+	font-size: 14px;
+	height: 45px;
+	padding-top: 15px;
+	border-bottom: 0;
+}
+
+.side_nav .snav_personal_order a,
+.side_nav .snav_main_push a,
+.side_nav .snav_group a,
+.side_nav .snav_today_deals a {
+	padding-top: 40px;
+	height: 19px;
+}
+
+.side_nav .snav_main_push a {
+	/*    background: url(/static/images/ico/snav.png) no-repeat 0 -60px;*/
+	background: url(../img/snav.png) no-repeat 0 -60px;
+}
+
+.snav_main_push a:hover,
+.side_nav .snav_group a:hover,
+.side_nav .snav_today_deals a:hover {
+	background-color: #00c8ff;
+}
+
+.side_nav .snav_group a {
+	background: url(../img/snav.png) no-repeat 0 -120px;
+}
+
+.side_nav .snav_today_deals a {
+	background: url(../img/snav.png) no-repeat 0 -180px;
+}

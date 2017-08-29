@@ -1,0 +1,306 @@
+.youcebianlan {
+	height: 800px;
+	width: 100%;
+	background: ;
+}
+
+.sitem_btn:hover {
+	background-color: #00c8ff;
+}
+
+.sidebar {
+	width: 35px;
+	position: fixed;
+	top: 0;
+	right: 0px;
+	z-index: 1000;
+	min-height: 100%;
+}
+
+div {
+	display: block;
+}
+
+.sidebar_panel {
+	width: 35px;
+	height: 100%;
+	text-align: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 20;
+	background: #6c6c6c;
+}
+
+.sidebar_panel_partone {
+	position: absolute;
+	top: 50%;
+	margin-top: -200px;
+	left: 0;
+	z-index: 10;
+	background: #6c6c6c;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+fieldset,
+lengend,
+button,
+input,
+textarea,
+th,
+td {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	outline: none;
+}
+
+user agent stylesheet a:-webkit-any-link {
+	color: -webkit-link;
+	text-decoration: underline;
+	cursor: auto;
+}
+
+Inherited from li#sidebar_login.sidebar_item.sidebar_login user agent stylesheet li {
+	display: list-item;
+	text-align: -webkit-match-parent;
+}
+
+.sidebar_login {
+	margin-bottom: 21px;
+}
+
+.sidebar_item {
+	position: relative;
+}
+
+.sitem_btn {
+	display: block;
+	width: 35px;
+}
+
+.sitem_btnbg {
+	display: block;
+	width: 35px;
+	height: 35px;
+	background: url(../img/sidebarico.png) no-repeat;
+}
+
+user agent stylesheet i,
+cite,
+em,
+var,
+address,
+dfn {
+	font-style: italic;
+}
+
+element.style {
+	left: 0px;
+	opacity: 0;
+	display: none;
+}
+
+.sidebar_tooltip {
+	width: 103px;
+	height: 35px;
+	line-height: 35px;
+	background: #6c6c6c;
+	text-align: center;
+	color: #fff;
+	position: absolute;
+	top: 0;
+	left: 0px;
+	display: none;
+}
+
+.sidebar_login .sidebar_tooltip a {
+	color: #fff;
+}
+
+.sidebar_login .sidebar_tooltip span {
+	margin: 0 10px;
+}
+
+.sidebar_tooltip .triangle {
+	position: absolute;
+	right: -8px;
+	top: 14px;
+	width: 0;
+	height: 0;
+	border-width: 4px;
+	border-style: dashed dashed dashed solid;
+	border-color: transparent transparent transparent #6c6c6c;
+}
+
+.sidebar_shopcar {
+	height: 126px;
+}
+
+.sidebar_shopcar {
+	margin-bottom: 26px;
+}
+
+.sidebar_shopcar .sitem_btnbg {
+	background-position: 0 -35px;
+}
+
+.sshopcar_text {
+	color: #fff;
+	display: block;
+	width: 15px;
+	margin: 5px auto 10px;
+}
+
+.sshopcar_amout {
+	color: #fff;
+	display: block;
+	width: 35px;
+	height: 35px;
+	line-height: 32px;
+	background: url(../img/sidebarico.png) no-repeat 0 -210px;
+	font-family: Arial;
+	font-size: 14px;
+}
+
+.sidebar_collect {
+	margin-bottom: 8px;
+}
+
+.sidebar_collect .sitem_btnbg {
+	background-position: 0 -70px;
+}
+
+.sitem_btnbg {
+	display: block;
+	width: 35px;
+	height: 35px;
+	background: url(../img/sidebarico.png) no-repeat;
+}
+
+.sidebar_foot .sitem_btnbg {
+	background-position: 0 -105px;
+}
+
+.sidebar_panel_parttwo {
+	position: absolute;
+	bottom: 20px;
+	left: 0;
+	z-index: 9;
+	background: #6c6c6c;
+}
+
+.sidebar_wechat {
+	margin-bottom: 10px;
+}
+
+.sidebar_wechat .sitem_btnbg {
+	background-position: 0 -140px;
+}
+
+.sidebar_wechat .sidebar_tooltip {
+	width: 370px;
+	height: 170px;
+	top: -135px;
+	left: -370px;
+}
+
+.clearfix {}
+
+.sidebar_ewm_box1 {
+	float: left;
+	margin-left: 10px;
+}
+
+.sidebar_ewm_box2 {
+	float: left;
+	margin-left: 0px;
+	/* margin-left: 2px;*/
+}
+
+.sidebar_ewm_box3 {
+	float: left;
+	margin-left: -5px;
+	/* padding-left: -4px;*/
+}
+
+.sidebar_wechat .sidebar_tooltip img {
+	display: block;
+	width: 110px;
+	height: 110px;
+	margin: 20px auto 4px;
+}
+
+img {
+	border: 0;
+}
+
+.sidebar_wechat .sidebar_tooltip .triangle {
+	right: -8px;
+	top: 147px;
+	width: 0;
+	height: 0;
+}
+
+.sidebar_servers {
+	margin-bottom: 30px;
+}
+
+.sidebar_servers .sitem_btnbg {
+	background-position: 0 -175px;
+}
+
+.sidebar_top {
+	width: 35px;
+	height: 35px;
+}
+
+.sidebar_top a {
+	display: block;
+	width: 35px;
+	height: 35px;
+}
+
+.up_triangle {
+	width: 0;
+	height: 0;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 3px;
+	border-width: 5px;
+	border-style: dashed dashed solid dashed;
+	border-color: transparent transparent #fff transparent;
+}
+
+.go_top {
+	font-family: Arial;
+	color: #fff;
+}
+
+Inherited from a.sitem_btn a:hover {
+	color: aqua;
+}

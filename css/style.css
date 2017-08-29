@@ -1,0 +1,88 @@
+
+img {border:0;}
+li {list-style:none;}
+
+
+.clearfix:after {
+	content:".";
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden;}
+.clearfix{display:inline-block;}
+.clearfix {display:block;}
+.clean {clear:both;}
+.fl {float:left;}
+.fr {float:right;}
+
+
+
+#navmenu{
+	font-size:14px;
+	position:relative;
+	z-index:10;
+	width:400px;
+    float: left;
+    margin-left: 200px;
+	height:30px; /*行高*/
+	}
+#navmenu .phone{width: 10px;height: 10px;float: left;margin-top: 5px;}
+#navmenu ul {
+	float:left;
+	padding:0 2px 0 0;}
+#navmenu ul li {
+	float:left;
+	height:30px;
+	width: 80px;
+	line-height:27px;
+	position:relative;
+	padding:0 0 0 2px; 
+	margin-left: 15px;
+	text-align: center;
+	}
+#navmenu ul li:hover{background-color: white;}	
+
+#navmenu ul li ul{
+	position:absolute;
+	top:30px;
+	left:0;
+	/*width:70px;*/
+	display:none;}
+
+
+#navmenu ul li ul li {
+	background:none;
+	float:left;
+	display:block;
+	width:80px;
+	margin-left:0px;
+	background-color: white;}
+#navmenu ul li ul li a{
+	float:none;
+	color:black;
+	display: block;
+	font-size: 13px;
+	line-height:30px;
+	/*padding:3px 10px;
+	width:65px;*/
+	text-decoration: none;
+	}
+#navmenu ul li ul li ul{
+	position:absolute;
+	top:0;
+	width:50px;
+	display:none;}
+#navmenu ul li ul li ul li{
+	float:left;
+	padding: 4px;
+	display:block;
+	width:100px;
+	}
+#navmenu ul li ul li ul li a{
+	float:none;
+	display: block;
+	font-size: 14px;
+	line-height:30px;
+	padding:3px 10px;
+	width:50px;
+	}

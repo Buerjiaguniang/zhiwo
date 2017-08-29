@@ -1,0 +1,308 @@
+.wenzi h2 {
+	text-align: left;
+}
+
+.wenzi h2 i {
+	font-style: normal;
+	font-family: Arial;
+	text-transform: uppercase;
+}
+
+img {
+	border: 0
+}
+
+
+/* css 注释说明：设置图片边框为0 */
+
+body {
+	behavior: url("csshover.htc");
+	text-align: center;
+	background-color: #f6f6f3;
+}
+
+
+/* css注释说明：兼容ie6 支持标签使用hover */
+
+.goodlist {
+	width: 1100px;
+	
+	background-color: #f6f6f3;
+	margin: 0 auto;
+	margin-top:-70px ;
+}
+
+.hotgoods {
+	position: relative;
+	width: 350px;
+	height: 350px;
+}
+
+.hotgoods:hover {
+	filter: alpha(opacity=70);
+	-moz-opacity: 0.7;
+	opacity: 0.7;
+}
+
+.hotgoods a,
+.hotgoods span {
+	display: none;
+	text-decoration: none
+}
+
+.hotgoods a,
+.hotgoods .span1 {
+	display: none;
+	text-decoration: none
+}
+
+.hotgoods:hover {
+	cursor: pointer
+}
+
+.hotgoods:hover a.now {
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	left: 0;
+	display: block;
+}
+
+.hotgoods:hover span {
+	display: block;
+	position: absolute;
+	margin-left: 30px;
+	bottom: 5px;
+	color: #00c8ff;
+	width: 70px;
+	border: 1px solid #00c8ff;
+	z-index: 10;
+	height: 30px;
+	line-height: 30px;
+	background: white;
+	/*filter:alpha(opacity=60);-moz-opacity:0.6;opacity: 0.6;*/
+}
+
+.hotgoods:hover .span1 {
+	display: block;
+	position: absolute;
+	margin-left: 130px;
+	bottom: 5px;
+	color: #00c8ff;
+	width: 70px;
+	border: 1px solid #00c8ff;
+	z-index: 10;
+	height: 30px;
+	line-height: 30px;
+	background: white;
+	/*filter:alpha(opacity=60);-moz-opacity:0.6;opacity: 0.6;*/
+}
+
+
+/* 设置显示文字定位位置，背景半透明 */
+
+.hotgoods:hover .span2 {
+	display: block;
+	position: absolute;
+	margin-left: 230px;
+	bottom: 5px;
+	color: #00c8ff;
+	width: 70px;
+	border: 1px solid #00c8ff;
+	z-index: 10;
+	height: 30px;
+	line-height: 30px;
+	background: white;
+	/*filter:alpha(opacity=60);-moz-opacity:0.6;opacity: 0.6;*/
+}
+
+
+/* 设置显示文字定位位置，背景半透明 */
+
+.goods1 {
+	width: 350px;
+	height: 507px;
+	float: left;
+	margin-top: 20px;
+}
+
+.goods2,
+.goods3 {
+	width: 350px;
+	height: 507px;
+	float: left;
+	padding-left: 25px;
+	margin-top: 20px;
+}
+
+.goods4 {
+	width: 350px;
+	height: 507px;
+	float: left;
+	margin-top: 30px;
+}
+
+.goods5,
+.goods6 {
+	width: 350px;
+	height: 507px;
+	float: left;
+	padding-left: 25px;
+	margin-top: 30px;
+}
+
+.hotgoods {
+	width: 350px;
+	height: 350px;
+	position: relative;
+	background: cadetblue;
+}
+
+.goods_info {
+	width: 310px;
+	height: 157px;
+	padding: 11px 20px 0;
+	background: #FFFFFF;
+}
+
+.goods_name {
+	width: 310px;
+	height: 40px;
+	overflow: hidden;
+	text-align: left;
+	margin: 0px;
+	padding: 0px;
+}
+
+.goods_name a {
+	width: 310px;
+	height: 40px;
+	display: block;
+	line-height:20px;
+	color: #6c6c6c;
+}
+
+.goods_name a span{
+	font-size: 18px;
+	color: red;
+	font-weight: bold;
+}
+
+.goods_name a {
+	font-size: 15px;
+}
+
+.goods_price {
+	width: 310px;
+	overflow: hidden;
+	text-align: left;
+	margin: 0px;
+	padding: 0px;
+	margin-top:10px ;
+}
+
+.price i {
+	font-style: normal;
+	color: rgb(255, 100, 60);
+	font-size: 20px;
+	font-family: 微软雅黑;
+}
+
+.price span {
+	font-size: 36px;
+	color: #ff643c;
+	font-family: Arial;
+}
+
+.price del {
+	font-size: 14px;
+	font-family: 微软雅黑;
+	color: rgb(196, 196, 196);
+	margin-left: 10px;
+}
+
+.price {
+	float: left;
+	margin-top:20px ;
+}
+
+.jiarugouwuche {
+	height: 26px;
+	width: 90px;
+	float: right;
+	background-color: #ff643c;
+	text-align: center;
+	margin-top: 30px;
+}
+
+.jiarugouwuche a {
+	text-decoration: none;
+	line-height: 26px;
+	color: #fff;
+}
+
+.sale_tip {
+	text-align: left;
+	margin: 0px;
+	padding: 0px;
+	color: #c4c4c4;
+	height: 40px;
+	border-top: 1px dotted #c4c4c4;
+	margin-top: 5px;
+}
+
+.sale_tip span {
+	font-size: 10px;
+}
+
+.sale_tip i {
+	font-size: 10px;
+	font-style: normal;
+}
+
+.jutuangoujieshu {
+	margin-top: 10px;
+	float: left;
+	padding-left: 22px;
+	background: url(http://www.zhiwo.com/static/images/ico/ico2.png) no-repeat 0 -230px;
+}
+
+.yigoumaihshu span {
+	float: right;
+	/*margin-top: 0px;*/
+	display: block;
+	margin-top: 13px;
+}
+
+.daojishi {
+	margin-top: 15px;
+	float: left;
+	font-size: 12px;
+	display: block;
+	margin-left: 10px;
+}
+
+
+/*.pro_name {
+    width: 310px;
+    height: 40px;
+    overflow: hidden;
+}
+.
+.pro_name a {
+    width: 310px;
+    height: 40px;
+    display: block;
+    line-height: 20px;
+    color: #6c6c6c;
+}
+.price_info {
+    margin-bottom: 12px;
+}
+.pinfo_num {
+    float: left;
+    margin-top: 11px;
+}*/

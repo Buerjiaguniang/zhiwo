@@ -1,0 +1,183 @@
+.shangbiao {
+	width: 1100px;
+	/*height: 300px;*/
+	margin: 0 auto;
+	/*background: ;*/
+	overflow: hidden; 
+/* border:solid red;*/
+}
+
+
+
+/*#tab,
+li,
+div {
+	margin: 0;
+	padding: 0;
+}*/
+#tab{/*border:solid red;*/width: 100%; border-bottom: 1px solid   #000000; list-style: none;}
+#tab .tli1{
+/*	border:solid red;*/
+	/*background-color: ;*/
+	/*display: block;*/
+	float: left;
+	width: 120px;
+	height:40px;
+	text-align: center;
+	padding-top: 30px;
+	list-style: none;
+	font-size: 14px;
+	color: #000000;
+	font-weight: bold;
+	line-height: 40px;
+	margin-right: 3%;
+ 	/*border-bottom:  2px solid  blue; 
+ */
+}
+/*
+#tab li.tli {
+	background-color: ;
+	color: #00c8ff;
+	border-bottom: 2px solid #00c8ff;
+}*/
+
+#tab {
+	overflow: hidden;
+	zoom: 1;
+	list-style-type: none;
+	margin-left: 5px;
+}
+
+
+/*important*/
+
+.tab_con {
+/*	overflow: hidden;*/
+	/*border:solid red;*/
+	border-top: cyan 2ox solid;
+	display:none;
+	width: 840px;
+	height: 220x;
+	
+}
+
+/*#tab_con DIV {
+	width: 840px;
+	height: 220px;
+	display: none;
+	/*border: 1px solid brown;*/
+	float: left;
+}*/
+
+.tab_con .tdiv {
+	
+	background-color: aqua;
+	/*到时需要注释掉*/
+}
+
+.allgoods a {
+	display: inline-block;
+	color: #000000;
+	text-decoration: none;
+}
+
+.allgoods {
+	float: right;
+	margin-top: -40px;
+}
+
+
+/*.middle {
+			 	width: 1100px;
+			 	height: 255px;
+			 	background-color: chartreuse;
+			 }*/
+
+#rightbrand {
+	width: 260px;
+	height: 220px;
+	/*border: 1px solid brown;*/
+	float: right;
+}
+
+#rightbrand div {
+	float: right;
+	width: 260px;
+	height: 220px;
+	background-color: #A52A2A;
+	float: right;
+	display: none;
+	margin-top: -100px;
+}
+
+#rightbrand div.tdiv {
+	background-color: antiquewhite;
+	/*到时需要注释掉*/
+	display: block;
+	float: right;
+}
+
+.tab_con .tpimg1 {
+	float: left;
+	display: block;
+	width: 160px;
+	height: 102px;
+	padding-left: 8px;
+}
+
+.tab_con img {
+	float: left;
+	display: block;
+	width: 160px;
+	height: 102px;
+}
+
+.tpimg21,
+.tpimg22 {
+	padding-top: 10px;
+	float: left;
+	display: block;
+	width: 160px;
+	height: 102px;
+}
+
+.tpimg22 {
+	padding-left: 8px;
+}
+
+.tpimg31 {
+	display: block;
+	width: 260px;
+	height: 212px;
+}
+
+
+/* 箭头样式*/
+
+.bbc_leftbtn {
+	 /*position: absolute; 
+	 right: 370px;
+	bottom: 10px; */
+	font-size: 44px;
+	color: darkgrey;
+	z-index: 100;
+	cursor: pointer;
+	 
+    margin-left: 840px;
+    float: left;
+    margin-top: -230px;
+ 
+}
+
+.bbc_rightbtn {
+/*	position: absolute;*/
+	/*right: 130px;
+	bottom: 480px;*/
+	font-size: 44px;
+	color: darkgrey;
+	z-index: 100;
+	cursor: pointer;
+	 margin-left: 1080px;
+    float: left;
+    margin-top: -230px;
+}

@@ -1,0 +1,2052 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>知我药妆</title>
+
+		<link href="css/header.css" rel="stylesheet" />
+		<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+		<link href="img/icon.svg" rel="shortcut icon" type="image/x-icon">
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery_cmhello.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="css/zuocebianlan.css" />
+		<link rel="stylesheet" type="text/css" href="css/youcebianlan.css" />
+		<link rel="stylesheet" type="text/css" href="css/shangbiaoqiehuan.css" />
+		<link type="text/css" href="css/jintianxinpin.css" rel="stylesheet" />
+
+		<link href="css/1.css" type="text/css" rel="stylesheet" />
+	
+
+		<style type="text/css">
+				#tab .tli2 {
+				color: #00c8ff;
+				border-bottom: 2px solid #00c8ff;
+			}
+			
+			.kao {
+				margin-left: 120px;
+				float: left;
+				width: 1100px;
+			}
+.header_topbanner span {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: 550px;
+    width: 17px;
+    height: 40px;
+    background: url('http://zhiwo.com/static/images/ico/fold.jpg') no-repeat;
+    cursor: pointer;
+    z-index: 102;
+}
+.header_topbanner .topbanner_small {
+    width: 100%;
+    height: 100px;
+    display: block;
+    position: absolute;
+    top: 0;
+    z-index: 99;
+}
+.search-for{width: 100%;height: 130px;float: left;background-color: white;}
+/*搜索栏*/
+.logo{
+	width: 200px; 
+	height: 100px; 
+	margin-top:10px; 
+	margin-left:120px;
+	background:url(img/zhiwo.png); 
+	background-position: -140px -135px;
+	float: left;}
+.kuan input{ 
+	width:330px; 
+	height:35px; 
+	border:none; 
+	float:left;
+	margin-left: 170px;
+	margin-top: 40px;
+    border: 3px solid #00c8ff;}
+.an input{ 
+    width:90px; 
+    height:41px;  
+    border:none;  
+    float:left;
+    margin-top: 40px;
+    background-color: #00c8ff;
+    color: white;
+    border: 3px solid #00c8ff;
+    font-size: 18px;}
+.search-word{
+    width: 400px;
+    height: 30px;
+  /*  background-color: bisque;*/
+    margin: -5px 170px;
+    float: left;
+    display: flex;
+    position: relative;}
+.search-word ul{
+    padding: 0;
+    margin: 0px; 
+    justify-content: space-between;
+    list-style: none;}
+.search-word li{
+	list-style: none;
+	padding: 0px;
+	margin: 6px;
+	display: inline; 
+	line-height: 30px;
+	float: left;}
+.search-word a{color: black;}
+ .shopping-cart{
+ 	width: 150px;
+	height: 50px;
+	float: left;
+	
+	border: 1px solid gainsboro;
+	margin-left:1050px;
+	margin-top:-70px;
+	float:left;
+	background: url(img/shopping-cart-1.jpg) no-repeat;}
+.shopping-cart:hover{background: url(img/shopping-cart-2.jpg) no-repeat;}	
+.footer-span{
+	width: 100%; 
+	background-color: white;
+	float:left;
+	margin-top: 45px;}
+		</style>
+	</head>
+
+	<script language=JavaScript>
+		var endtimes = new Array(); //结束时间
+		endtimes[0] = "4/6/2017 9:04:00";
+		endtimes[1] = "4/6/2017 10:04:20";
+		endtimes[2] = "4/8/2017 10:05:00";
+		endtimes[3] = "4/9/2017 10:05:00";
+		endtimes[4] = "4/6/2017 10:04:00";
+		endtimes[5] = "4/6/2017 11:04:20";
+		endtimes[6] = "4/8/2017 12:05:00";
+		endtimes[7] = "4/9/2017 13:05:00";
+		endtimes[8] = "4/6/2017 11:04:00";
+		endtimes[9] = "4/6/2017 10:04:20";
+		endtimes[10] = "4/8/2017 10:05:00";
+		endtimes[11] = "4/9/2017 10:05:00";
+		endtimes[12] = "4/6/2017 10:04:00";
+		endtimes[13] = "4/6/2017 11:04:20";
+		endtimes[14] = "4/8/2017 15:05:00";
+		endtimes[15] = "4/9/2017 16:05:00";
+		endtimes[16] = "4/6/2017 17:04:00";
+		endtimes[17] = "4/6/2017 18:04:20";
+
+		var nowtimes;
+
+		function givetime() {
+			nowtimes = new Date("4/6/2017 9:03:00"); //当前服务器时间
+			//nowtimes=new Date( );//当前服务器时间
+			window.setTimeout("DownCount()", 1000)
+		}
+
+		function DownCount() {
+			nowtimes = Number(nowtimes) + 1000;
+			for(var i = 0; i <= 17; i++) {
+				var theDay = new Date(endtimes[i]);
+				theDay = theDay++;
+				if(theDay <= nowtimes) {
+					document.getElementById("times" + i).innerHTML = "00小时，00分钟，00秒";
+				} else {
+					timechange(theDay, i);
+				}
+			}
+			window.setTimeout("DownCount()", 1000)
+		}
+
+		function timechange(theDay, i) {
+			var theDays = new Date(theDay);
+			var seconds = (theDays - nowtimes) / 1000;
+			var minutes = Math.floor(seconds / 60);
+			var hours = Math.floor(minutes / 60);
+			var days = Math.floor(hours / 24);
+			var CDay = days;
+			var CHour = hours % 24;
+			var CMinute = minutes % 60;
+			var CSecond = seconds % 60;
+			var CHour = CHour + CDay * 24;
+			if(CMinute < 10) {
+				CMinute = "0" + CMinute;
+			}
+			if(CHour < 10) {
+				CHour = "0" + CHour;
+			}
+			if(CSecond < 10) {
+				CSecond = "0" + CSecond;
+			}
+			document.getElementById("times" + i).innerHTML = CHour + "小时，" + CMinute + "分钟，" + CSecond + "秒";
+		}
+	</script>
+
+
+	<body onload="givetime()">
+
+		<a name="top"></a>
+
+		<div class="wrap">
+			<div class="header">
+				<div class="header_topbanner" style="height: 100px;">
+					<a href="index2.html"><span class="" style="display: inline;"></span></a>
+					<a class="topbanner_small" href="http://zhiwo.com/activity/elizabetharden" style="background:url('http://images.zhiwo.com/product/2017/0110/13511229580624737008.jpg') no-repeat center top;"></a>
+				</div>
+				<div class="top">
+					<div class="topnav">
+						<div class="topnav-left">
+							<ul>
+								<li>欢迎来到知我！这里，用专业呵护美丽。</li>
+								<li>
+									<a href="login.html">请登录</a>
+								</li>
+								<li>
+									<a href="zhuce.html">免费注册</a>
+								</li>
+							</ul>
+
+						</div>
+						<div id="navmenu">
+							<ul class="navmenu-title">
+								<li id="navmenu-title-list" class="navmenu-title-list-1">
+									<div class="phone"><img src="img/phone.png"></div>手机知我</li>
+								<li id="navmenu-title-list" class="navmenu-title-list-2">微信商城</a>
+									<ul class="navmenu-title-down">
+										<li id="navmenu-title-down-2-1" class="navmenu-title-list-2-1"><img src="img/android_ewm.png" style="width: 80px;height: 80px;" /></li>
+									</ul>
+								</li>
+								<li id="navmenu-title-list" class="navmenu-title-list-3">我的小窝</a>
+									<ul class="navmenu-title-down">
+										<li id="navmenu-title-down-3-1" class="navmenu-title-list-3-1">
+											<a href="#">我的订单</a>
+										</li>
+										<li id="navmenu-title-down-3-2" class="navmenu-title-list-3-2">
+											<a href="#">我的优惠券</a>
+										</li>
+										<li id="navmenu-title-down-3-3" class="navmenu-title-list-3-3">
+											<a href="#">我的收藏</a>
+										</li>
+										<li id="navmenu-title-down-3-4" class="navmenu-title-list-3-4">
+											<a href="#">我的预订</a>
+										</li>
+										<li id="navmenu-title-down-3-5" class="navmenu-title-list-3-5">
+											<a href="#">我的积分</a>
+										</li>
+									</ul>
+								</li>
+								<li id="navmenu-title-list" class="navmenu-title-list-4">客户服务</a>
+									<ul class="navmenu-title-down">
+										<li id="navmenu-title-down-4-2" class="navmenu-title-list-4-2">
+											<a href="#">帮助中心</a>
+										</li>
+										<li id="navmenu-title-down-4-3" class="navmenu-title-list-4-3">
+											<a href="#">新浪微博</a>
+										</li>
+										<li id="navmenu-title-down-4-4" class="navmenu-title-list-4-4">
+											<a href="#">正品承诺</a>
+										</li>
+										<li id="navmenu-title-down-4-5" class="navmenu-title-list-4-5">
+											<a href="#">防伪查询</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="search-for">
+					<a href="index.html">
+						<div class="logo"></div>
+					</a>
+					<div class="search">
+						<form action="" method="get">
+							<div class="kuan"><input name="" type="text" placeholder="请输入关键字" /></div>
+							<!--搜索框-->
+							<div class="an"><input name="" type="button" value="搜索" /></div>
+							<!--搜索按钮-->
+						</form>
+					</div>
+					<div class="search-word">
+						<ul>
+							<a href="#">
+								<li>保湿</li>
+							</a>
+							<div class="line"></div>
+							<a href="#">
+								<li>面膜</li>
+							</a>
+							<div class="line"></div>
+							<a href="#">
+								<li>洗面奶</li>
+							</a>
+							<div class="line"></div>
+							<a href="#">
+								<li>补水</li>
+							</a>
+							<div class="line"></div>
+							<a href="#">
+								<li>香水</li>
+							</a>
+							<div class="line"></div>
+							<a href="#">
+								<li>眼霜</li>
+							</a>
+							<div class="line"></div>
+							<a href="#">
+								<li>口红</li>
+							</a>
+						</ul>
+					</div>
+					<div class="shopping-cart">
+
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			
+			<div class="banner">
+				<!-- 头部-->
+				<div class="header2">
+					<div class="headleft">
+						<div class="header-mainnavleft">
+							<ul class="shopleft">
+								<li class="shopheader">
+									<a class="mainnav q" href="/"><span>首页</span></a>
+								</li>
+								<li class="shop">
+									<a class="mainnav" href="#"><span>知我商城</span></a>
+								</li>
+								<li class="shophaitao">
+									<a class="mainnav" href="#">
+										<img class="overseas_nav_img1" src="img/home_overseas.gif">
+										<img class="overseas_nav_img2" src="img/home_overseas_current.gif">
+									</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="header-mainnavright">
+							<ul class="slide">
+								<li class="baidutouzi"><span class="piaoyi">百度投资</span></li>
+								<li class="zhenpin"><span class="piaoyi">真品保证</span></li>
+								<li class="baoyou"><span class="piaoyi">2件包邮</span></li>
+								<li class="tuihuo"><span class="piaoyi">30天无理由换退货</span></li>
+							</ul>
+
+						</div>
+
+					</div>
+				</div>
+
+				<div class="myCarousel">
+
+					<div class="lunbo">
+						<img class="img" src="img/first.jpg" alt="">
+					</div>
+
+				</div>
+				<!-- 化妆品标签 -->
+				<div class="content">
+					<div class="mainlist">
+						<div class="hufu">
+							<dl>
+								<dt ><a class="q1">护肤</a></dt>
+								
+								<dd>
+									<a href="#">面膜面贴</a>
+								</dd>
+								<dd>
+									<a href="#">乳液凝露</a>
+								</dd>
+								<dd>
+									<a href="#">洁面卸妆</a>
+								</dd>
+								<dd>
+									<a href="#">眼精华/眼霜</a>
+								</dd>
+								<dd>
+									<a href="#">防晒隔离</a>
+								</dd>
+								<dd>
+									<a href="#">化妆水爽肤水</a>
+								</dd>
+								<dd>
+									<a href="#">眼膜/眼贴</a>
+								</dd>
+								<dd>
+									<a href="#">精华</a>
+								</dd>
+							</dl>
+						</div>
+						<div class="yaozhuang">
+							<dl>
+								<dt><a class="q1">药妆</a></dt>
+								
+								<dd>
+									<a href="#">乳液面霜</a>
+								</dd>
+								<dd>
+									<a href="#">洁面卸妆</a>
+								</dd>
+								<dd>
+									<a href="#">面部精华</a>
+								</dd>
+								<dd>
+									<a href="#">化妆水爽肤水</a>
+								</dd>
+								<dd>
+									<a href="#">面膜面贴</a>
+								</dd>
+								<dd>
+									<a href="#">喷雾</a>
+								</dd>
+								<dd>
+									<a href="#">眼精华/眼霜</a>
+								</dd>
+								<dd>
+									<a href="#">防晒隔离</a>
+								</dd>
+							</dl>
+						</div>
+					</div>
+
+					<div class="mainlist">
+						<div class="xihu">
+							<dl>
+								<dt><a class="q1">洗护</a></dt>
+								
+								<dd>
+									<a href="#">洗发护发</a>
+								</dd>
+								<dd>
+									<a href="#">口腔护理</a>
+								</dd>
+								<dd>
+									<a href="#">沐浴润体</a>
+								</dd>
+								<dd>
+									<a href="#">身体乳霜</a>
+								</dd>
+								<dd>
+									<a href="#">手足护理</a>
+								</dd>
+								<dd>
+									<a href="#">美体瘦身</a>
+								</dd>
+								<dd>
+									<a href="#">防晒隔离</a>
+								</dd>
+								<dd>
+									<a href="#">润唇膏</a>
+								</dd>
+							</dl>
+						</div>
+						<div class="caizhuang">
+							<dl>
+								<dt><a class="q2">彩妆香氛</a></dt>
+								
+								<dd>
+									<a href="#">唇彩/口红</a>
+								</dd>
+								<dd>
+									<a href="#">女士香水</a>
+								</dd>
+								<dd>
+									<a href="#">粉饼/蜜粉</a>
+								</dd>
+								<dd>
+									<a href="#">男士香水</a>
+								</dd>
+								<dd>
+									<a href="#">睫毛</a>
+								</dd>
+								<dd>
+									<a href="#">眼线</a>
+								</dd>
+								<dd>
+									<a href="#">腮红/胭脂</a>
+								</dd>
+								<dd>
+									<a href="#">粉底/妆前乳</a>
+								</dd>
+								<dd>
+									<a href="#">眼影/彩妆盘</a>
+								</dd>
+								<dd>
+									<a href="#">BB霜/CC霜</a>
+								</dd>
+							</dl>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+ 
+ 
+ 
+ 
+ 
+ 
+				<a name="dd"></a>
+			<div class="today-headline">
+				<div class="today-headline-title">
+
+				</div>
+				<div class="today-headline-goods">
+					<a href="#"><img src="img/today-headline-goods-production-1.jpg"></a>
+					<div class="countdown">
+						距团购结束：
+						<span id="less_day"></span>天
+						<span id="less_hour"></span>时
+						<span id="less_minutes"></span>分
+						<span id="less_seconds"></span>秒
+					</div>
+					<a href="#">
+						<div class="today-headline-goods-production-1"></div>
+					</a>
+					<div class="today-headline-goods-production-1-price"></div>
+					<div class="today-headline-goods-production-1-shopping">
+						<input type="button" class="shooping_cart" name="shopping-cart" value="加入购物车" style="width: 140px; height: 40px; font-size: 20px; color: white; background-color: #ff643c;" />
+					</div>
+					<div class="today-headline-goods-production-everbuy">
+						已有<span>56</span>人购买
+					</div>
+				</div>
+
+				<div class="today-headline-goods">
+					<a href="#"><img src="img/today-headline-goods-production-2.jpg"></a>
+					<div class="countdown">
+						距团购结束：
+						<span id="less_day-2"></span>00天
+						<span id="less_hour-2"></span>23时
+						<span id="less_minutes-2"></span>59分
+						<span id="less_seconds-2"></span>59秒
+					</div>
+					<a href="#">
+						<div class="today-headline-goods-production-2"></div>
+					</a>
+					<div class="today-headline-goods-production-2-price"></div>
+					<div class="today-headline-goods-production-2-shopping">
+						<input type="button" value="加入购物车" style="width: 140px; height: 40px; font-size: 20px; color: white; background-color: #ff643c;" />
+					</div>
+					<div class="today-headline-goods-production-everbuy">
+						已有<span>42</span>人购买
+					</div>
+					<div class="today-headline-goods-transbox">
+						<img src="img/unbegan.png">
+					</div>
+				</div>
+
+				<div class="today-headline-goods">
+					<a href="#"><img src="img/today-headline-goods-production-3.jpg"></a>
+					<div class="countdown">
+						距团购结束：
+						<span id="less_day-3"></span>00天
+						<span id="less_hour-3"></span>00时
+						<span id="less_minutes-3"></span>00分
+						<span id="less_seconds-3"></span>00秒
+					</div>
+					<a href="#">
+						<div class="today-headline-goods-production-3"></div>
+					</a>
+					<div class="today-headline-goods-production-3-price"></div>
+					<div class="today-headline-goods-production-3-shopping">
+						<input type="button" value="加入购物车" style="width: 140px; height: 40px; font-size: 20px; color: white; background-color: #ff643c;" />
+					</div>
+					<div class="today-headline-goods-production-everbuy">
+						已有<span>28</span>人购买
+					</div>
+					<div class="today-headline-goods-transbox-ending">
+						<img src="img/ending.png">
+					</div>
+				</div>
+			</div>
+			<div class="recommend">
+				<div class="xiaozhi-recommend">
+					<div class="xiaozhi-recommend-title">
+
+					</div>
+					<div class="box">
+						<div class="cont">
+							<span class="fir"><img src="img/box-8.jpg"></span>
+							<div class="white"></div>
+
+							<span><img src="img/box-1.jpg"></span>
+							<div class="white"></div>
+							<span><img src="img/box-2.jpg"></span>
+							<span><img src="img/box-3.jpg"></span>
+							<div class="white"></div>
+							<span><img src="img/box-4.jpg"></span>
+							<div class="white"></div>
+							<span><img src="img/box-6.jpg"></span>
+							<span><img src="img/box-1.jpg"></span>
+							<div class="white"></div>
+							<span><img src="img/box-7.jpg"></span>
+							<div class="white"></div>
+							<span><img src="img/box-8.jpg"></span>
+							<span><img src="img/box-9.jpg"></span>
+							<div class="white"></div>
+							<span><img src="img/box-10.jpg"></span>
+							<div class="white"></div>
+							<span><img src="img/box-1.jpg"></span>
+						</div>
+						<div class="xiaozhi-recommend-goods-shopping">
+							<p class="xiaozhi-recommend-goods-price">
+								<i>￥</i>
+								<span>49</span>
+								<del>￥80.00</del>
+							</p>
+							<p class="xiaozhi-recommend-goods-shoppingcart">
+								<a href="#">加入购物车</a>
+							</p>
+						</div>
+
+						<div class="left">
+							&lt;
+						</div>
+						<div class="right">
+							&gt;
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="kao">
+				<ul id="tab">
+					<a name="yxm"></a>
+					<li class="tli2 tli1" id="li1"> 畅销品牌 </li>
+					<li class="tli1" id="li2">欧美品牌</li>
+					<li class="tli1" id="li3">日韩品牌</li>
+					<li class="tli1" id="li4">国内品牌</li>
+				</ul>
+
+			</div>
+
+
+			<div class="shangbiao">
+
+				<div class="allgoods">
+					<a href="#">全部品牌+</a>
+				</div>
+
+				<!-- <div id="middle">-->
+				<div id="tab_con1" class="tab_con" style="display: block;">
+
+					<!--第一个tab begin-->
+					<div class="tdiv" id="div1">
+						<!--	第一行////////////////////////////////////////////////-->
+						<a href="#">
+
+							<img src="http://images.zhiwo.com/product/2015/0731/11633789268330446680.jpg">
+
+						</a>
+
+						<a href="#">
+							<img src="http://images.zhiwo.com/product/2015/0731/14192958587290516872.jpg" class="tpimg1">
+
+						</a>
+						<a href="#">
+
+							<img src="http://images.zhiwo.com/product/2015/0731/4073375999297128111.jpg" class="tpimg1">
+
+						</a>
+						<a href="#">
+
+							<img src="http://images.zhiwo.com/product/2015/0731/14003913002687991368.jpg" class="tpimg1">
+
+						</a>
+						<a href="#">
+							<img src="http://images.zhiwo.com/product/2015/0731/1595390364904776342.jpg" class="tpimg1">
+						</a>
+						<!--第一个tab第一行结束////////////////////////////////////////////////-->
+
+						<!--第一个tab第二行////////////////////////////////////////////////-->
+
+						<a href="#">
+							<img src="http://images.zhiwo.com/product/2015/0731/2525174846649696561.jpg" class="tpimg21">
+						</a>
+
+						<a href="#">
+							<img src="http://images.zhiwo.com/product/2015/0731/11398590373642272031.jpg" class="tpimg22">
+						</a>
+
+						<a href="#">
+							<img src=" http://images.zhiwo.com/product/2015/0731/3792364823031107435.jpg" class="tpimg22">
+						</a>
+						<a href="#">
+							<img src="http://images.zhiwo.com/product/2015/0728/7982576791887213766.jpg " class="tpimg22">
+						</a>
+						<a href="#">
+							<img src=" http://images.zhiwo.com/product/2015/0731/1915325997945869361.jpg" class="tpimg22">
+						</a>
+						<!--第一个tab第二行结束////////////////////////////////////////////////-->
+					</div>
+				</div>
+				<!--	第一个tab end-->
+
+				<div id="tab_con2" class="tab_con">
+
+					<!--	第二个tab begin-->
+					<div id="div2" class="tdiv">
+						<!--第一行////////////////////////////////////////////////-->
+						<a href="#">
+
+							<img src="http://images.zhiwo.com/product/2015/0727/3561103715310174247.jpg">
+
+						</a>
+
+						<a href="#">
+							<img src="http://images.zhiwo.com/product/2015/0728/8573329572596548349.jpg" class="tpimg1">
+
+						</a>
+						<a href="#">
+
+							<img src="http://images.zhiwo.com/product/2015/0731/16426238961878811670.jpg" class="tpimg1">
+
+						</a>
+						<a href="#">
+
+							<img src="http://images.zhiwo.com/product/2015/0727/13725000168060300530.jpg" class="tpimg1">
+
+						</a>
+						<a href="#">
+							<img src="http://images.zhiwo.com/product/2015/0731/1012388296295508907.jpg" class="tpimg1">
+						</a>
+						<!--第二个tab第一行结束////////////////////////////////////////////////-->
+
+						<!--第二个tab第二行////////////////////////////////////////////////-->
+
+						<a href="#">
+							<img src="http://images.zhiwo.com/product/2015/0731/11823942075337595152.jpg" class="tpimg21">
+						</a>
+
+						<a href="#">
+							<img src="http://images.zhiwo.com/brand/new660.jpg?6" class="tpimg22">
+						</a>
+
+						<a href="#">
+							<img src=" http://images.zhiwo.com/product/2015/0731/10279475932190650925.jpg" class="tpimg22">
+						</a>
+						<a href="#">
+							<img src="http://images.zhiwo.com/product/2015/0731/4069745134411820033.jpg" class="tpimg22">
+						</a>
+						<a href="#">
+							<img src="http://images.zhiwo.com/brand/new586.jpg?84" class="tpimg22">
+						</a>
+						<!--第二个tab第二行结束////////////////////////////////////////////////-->
+					</div>
+				</div>
+				<!--	第二个tab end-->
+				<!--第三个tab begin-->
+				<div id="tab_con3" class="tab_con">
+					<div id="div3" class="tdiv">
+						<!--第一行////////////////////////////////////////////////-->
+						<a href="#">
+
+							<img src=" http://images.zhiwo.com/product/2015/0727/15052747065982275170.jpg">
+
+						</a>
+
+						<a href="#">
+							<img src="http://images.zhiwo.com/product/2015/0727/392336696239890486.jpg " class="tpimg1">
+
+						</a>
+						<a href="#">
+
+							<img src=" http://images.zhiwo.com/product/2015/0727/4105911076429857239.jpg" class="tpimg1">
+
+						</a>
+						<a href="#">
+
+							<img src=" http://images.zhiwo.com/product/2015/0727/6588947328155612531.jpg " class="tpimg1">
+
+						</a>
+						<a href="#">
+							<img src=" http://images.zhiwo.com/product/2015/0731/6982554699552734744.jpg " class="tpimg1">
+						</a>
+						<!--第一行结束////////////////////////////////////////////////-->
+
+						<!--第二行////////////////////////////////////////////////-->
+
+						<a href="#">
+							<img src=" http://images.zhiwo.com/product/2015/0727/311411624111062359.jpg" class="tpimg21">
+						</a>
+
+						<a href="#">
+							<img src=" http://images.zhiwo.com/product/2015/0731/15339014486720805492.jpg " class="tpimg22">
+						</a>
+
+						<a href="#">
+							<img src=" http://images.zhiwo.com/product/2015/0731/12199088327079549182.jpg" class="tpimg22">
+						</a>
+						<a href="#">
+							<img src=" http://images.zhiwo.com/product/2015/0728/11371201596439011936.jpg " class="tpimg22">
+						</a>
+						<a href="#">
+							<img src=" http://images.zhiwo.com/product/2015/0728/16470291727021584211.jpg" class="tpimg22">
+						</a>
+						<!--第二行结束////////////////////////////////////////////////-->
+					</div>
+				</div>
+				<!--第三个tab end	-->
+
+				<div id="tab_con4" class="tab_con">
+
+					<!--第四个tab begin-->
+					<div id="div4" class="tdiv">
+
+						<!--第一行////////////////////////////////////////////////-->
+						<a href="#">
+
+							<img src=" http://images.zhiwo.com/product/2015/0727/15730054289387884252.jpg ">
+
+						</a>
+
+						<a href="#">
+							<img src="http://images.zhiwo.com/product/2015/0727/10888247086562937457.jpg " class="tpimg1">
+
+						</a>
+						<a href="#">
+
+							<img src=" http://images.zhiwo.com/brand/new220.jpg?62" class="tpimg1">
+
+						</a>
+						<a href="#">
+
+							<img src=" http://images.zhiwo.com/product/2015/0727/5089260052217930966.jpg" class="tpimg1">
+
+						</a>
+						<a href="#">
+							<img src=" http://images.zhiwo.com/brand/new661.jpg?75" class="tpimg1">
+						</a>
+						<!--第一行结束////////////////////////////////////////////////-->
+
+						<!--第二行////////////////////////////////////////////////-->
+
+						<a href="#">
+							<img src=" http://images.zhiwo.com/brand/new667.jpg?52" class="tpimg21">
+						</a>
+
+						<a href="#">
+							<img src=" http://images.zhiwo.com/brand/new666.jpg?83" class="tpimg22">
+						</a>
+
+						<a href="#">
+							<img src=" http://images.zhiwo.com/product/2015/0727/14735824901568134075.jpg" class="tpimg22">
+						</a>
+						<a href="#">
+							<img src=" http://images.zhiwo.com/brand/new140.jpg?87" class="tpimg22">
+						</a>
+						<a href="#">
+							<img src="http://images.zhiwo.com/brand/new693.jpg?59" class="tpimg22">
+						</a>
+						<!--第二行结束////////////////////////////////////////////////-->
+
+					</div>
+				</div>
+
+				<!--第四个tab end-->
+
+				<!--tab_con end、-->
+
+          <!--rightbrand begin-->
+				<div id="rightbrand">
+				<div class="tdiv">
+					<a href="#">
+						<img src="http://images.zhiwo.com/product/2015/0729/6224111724773962949.jpg" class="tpimg31">
+					</a>
+				</div>
+
+				<div>
+					<a href="#">
+						<img src="http://images.zhiwo.com/product/2015/0821/4196675089301349460.jpg">
+					</a>
+				</div>
+
+				<div>
+					<a href="#">
+						<img src=" http://images.zhiwo.com/product/2015/0728/17983430342141412657.jpg ">
+					</a>
+				</div>
+
+				<div>
+					<a href="#">
+						<img src=" http://images.zhiwo.com/product/2015/0728/15149004218430526764.jpg">
+					</a>
+
+				</div>
+			</div>
+				<!--rightbrand-->
+			<div class="bbc_leftbtn">&lt;</div>
+            <div class="bbc_rightbtn">&gt;</div>
+
+
+
+			</div>
+
+
+
+<a name="shangxindanpin"></a>
+
+			<div class="goodlist">
+
+				<div class="wenzi">
+					<h2><span>今天新品</span><i>HOT DEALS DAY</i></h2></div>
+				<!--goods1 begin-->
+				<div class="goods1">
+
+					<div class="hotgoods" style="background: url(http://images.zhiwo.com/product/2016/0909/470561686540598637.jpg);">
+
+						<!--<img  src="http://images.zhiwo.com/product/2016/0909/470561686540598637.jpg" />  -->
+
+						<span>补水</span> <span class="span1">保湿</span> <span class="span2">提拉紧致</span>
+
+						<a href="#" class="now">&nbsp;</a>
+					</div>
+					<!--hotgoods end-->
+
+					<div class="goods_info">
+						<div class="goods_name">
+							<a><span>6.2折</span>丽得姿核心至美活力弹润调理面膜25ml*5片,肌肤紧致有弹性。</a>
+						</div>
+
+						<div class="goods_price ">
+							<p class="price">
+								<i>￥</i>
+								<span>49</span>
+								<del>￥80.00</del>
+							</p>
+							<p class="jiarugouwuche">
+								<a href="#" class="put_cart">加入购物车</a>
+							</p>
+						</div>
+
+						<div class="sale_tip ">
+							<p class="jutuangoujieshu">
+								<i>距团购结束</i>
+								<div id="times0" class="daojishi"></div>
+
+							</p>
+							<p class="yigoumaihshu"> <span>265 已购买</span></p>
+						</div>
+					</div>
+					<!--goods_info  end-->
+				</div>
+				<!--goods 1end-->
+
+				<!--goods2 begin-->
+				<div class="goods2">
+					<div class="hotgoods" style="background: url(http://images.zhiwo.com/product/2016/0928/1570129223096765485.jpg);">
+
+						<!-- <img  src="http://images.zhiwo.com/product/2016/0928/1570129223096765485.jpg" />-->
+						<span class="span1">舒缓</span>
+						<a href="#" class="now">&nbsp;</a>
+					</div>
+					<!--hotgoods end-->
+					<div class="goods_info">
+						<div class="goods_name">
+							<a><span>4.4折</span>丽得姿核心至美活力弹润调理面膜25ml*5片,肌肤紧致有弹性。</a>
+						</div>
+
+						<div class="goods_price ">
+							<p class="price">
+								<i>￥</i>
+								<span>39</span>
+								<del>￥88.00</del>
+							</p>
+							<p class="jiarugouwuche">
+								<a href="#">加入购物车</a>
+							</p>
+						</div>
+
+						<div class="sale_tip ">
+							<p class="jutuangoujieshu">
+								<i>距团购结束</i>
+								<div id="times1" class="daojishi"></div>
+
+							</p>
+
+							<p class="yigoumaihshu"> <span>265 已购买</span></p>
+						</div>
+					</div>
+					<!--goods_info  end-->
+				</div>
+				<!--goods2 end-->
+
+				<!--goods3 begin-->
+				<div class="goods3">
+
+					<div class="hotgoods" style="background: url(http://images.zhiwo.com/product/2016/0408/7823642601612835111.jpg);">
+
+						<span>保湿补水</span><span class="span1">遮瑕</span>
+						<a href="#" class="now">&nbsp;</a>
+					</div>
+					<!--hotgoods end-->
+
+					<div class="goods_info">
+						<div class="goods_name">
+							<a><span>7.4折</span>丽得姿核心至美活力弹润调理面膜25ml*5片,肌肤紧致有弹性。</a>
+						</div>
+
+						<div class="goods_price ">
+							<p class="price">
+								<i>￥</i>
+								<span>206</span>
+								<del>￥278.00</del>
+							</p>
+							<p class="jiarugouwuche">
+								<a href="#">加入购物车</a>
+							</p>
+						</div>
+
+						<div class="sale_tip ">
+							<p class="jutuangoujieshu">
+								<i>距团购结束</i>
+								<div id="times2" class="daojishi"></div>
+
+							</p>
+							<p class="yigoumaihshu"> <span>265 已购买</span></p>
+						</div>
+					</div>
+					<!--goods_info  end-->
+				</div>
+				<!--goods3 end-->
+
+				<!--goods4 begin-->
+				<div class="goods4">
+					<div class="hotgoods" style="background: url(http://images.zhiwo.com/product/2016/0622/13849078515527040058.jpg);">
+
+						<span>保湿补水</span> <span class="span1">润肤</span> <span class="span2">舒缓</span>
+						<a href="#" class="now">&nbsp;</a>
+					</div>
+					<!--hotgoods end-->
+
+					<div class="goods_info">
+						<div class="goods_name">
+							<a><span>5.5折</span>丽得姿核心至美活力弹润调理面膜25ml*5片,肌肤紧致有弹性。</a>
+						</div>
+
+						<div class="goods_price ">
+							<p class="price">
+								<i>￥</i>
+								<span>109</span>
+								<del>￥198.00</del>
+							</p>
+							<p class="jiarugouwuche">
+								<a href="#">加入购物车</a>
+							</p>
+						</div>
+
+						<div class="sale_tip ">
+							<p class="jutuangoujieshu">
+								<i>距团购结束</i>
+								<div id="times3" class="daojishi"></div>
+
+							</p>
+							<p class="yigoumaihshu"> <span>265 已购买</span></p>
+						</div>
+					</div>
+					<!--goods_info  end-->
+				</div>
+				<!--goods4end-->
+
+				<!--goods5 begin-->
+				<div class="goods5">
+					<div class="hotgoods" style="background: url(http://images.zhiwo.com/product/2016/0909/1554922012656258541.jpg);">
+						<span>补水</span> <span class="span1">保湿</span> <span class="span2">润肤</span>
+						<a href="#" class="now">&nbsp;</a>
+					</div>
+					<!--hotgoods end-->
+
+					<div class="goods_info">
+						<div class="goods_name">
+							<a><span>6.1折</span>丽得姿核心至美活力弹润调理面膜25ml*5片,肌肤紧致有弹性。</a>
+						</div>
+
+						<div class="goods_price ">
+							<p class="price">
+								<i>￥</i>
+								<span>49</span>
+								<del>￥80.00</del>
+							</p>
+							<p class="jiarugouwuche">
+								<a href="#">加入购物车</a>
+							</p>
+						</div>
+
+						<div class="sale_tip ">
+							<p class="jutuangoujieshu">
+								<i>距团购结束</i>
+								<div id="times4" class="daojishi"></div>
+
+							</p>
+							<p class="yigoumaihshu"> <span>265 已购买</span></p>
+						</div>
+					</div>
+					<!--goods_info  end-->
+				</div>
+				<!--goods5 end-->
+
+				<!--goods6 begin-->
+				<div class="goods6">
+					<div class="hotgoods" style="background: url(http://images.zhiwo.com/product/2016/0907/5179668733540241030.jpg);">
+						<!--<span>补水</span>--><span class="span1">补水</span>
+						<!--<span class="span2">保湿补水</span>-->
+						<a href="#" class="now">&nbsp;</a>
+					</div>
+					<!--hotgoods end-->
+
+					<div class="goods_info">
+						<div class="goods_name">
+							<a><span>3.8折</span>丽得姿核心至美活力弹润调理面膜25ml*5片,肌肤紧致有弹性。</a>
+						</div>
+
+						<div class="goods_price ">
+							<p class="price">
+								<i>￥</i>
+								<span>54</span>
+								<del>￥144.00</del>
+							</p>
+							<p class="jiarugouwuche">
+								<a href="#">加入购物车</a>
+							</p>
+						</div>
+
+						<div class="sale_tip ">
+							<p class="jutuangoujieshu">
+								<i>距团购结束</i>
+								<div id="times5" class="daojishi"></div>
+
+							</p>
+							<p class="yigoumaihshu"> <span>265 已购买</span></p>
+						</div>
+					</div>
+					<!--goods_info  end-->
+
+				</div>
+				<!--goods6 end-->
+
+				<!--第三行-->
+				<!--goods4 begin-->
+				<div class="goods4">
+					<div class="hotgoods" style="background: url(http://images.zhiwo.com/product/2016/0509/17188045950767944429.jpg);">
+						<span>保湿</span> <span class="span1">防晒</span> <span class="span2">遮瑕</span>
+						<a href="#" class="now">&nbsp;</a>
+					</div>
+					<!--hotgoods end-->
+
+					<div class="goods_info">
+						<div class="goods_name">
+							<a><span>8.6折</span>丽得姿核心至美活力弹润调理面膜25ml*5片,肌肤紧致有弹性。</a>
+						</div>
+
+						<div class="goods_price ">
+							<p class="price">
+								<i>￥</i>
+								<span>279</span>
+								<del>￥325.00</del>
+							</p>
+							<p class="jiarugouwuche">
+								<a href="#">加入购物车</a>
+							</p>
+						</div>
+
+						<div class="sale_tip ">
+							<p class="jutuangoujieshu">
+								<i>距团购结束</i>
+								<div id="times6" class="daojishi"></div>
+
+							</p>
+							<p class="yigoumaihshu"> <span>265 已购买</span></p>
+						</div>
+					</div>
+					<!--goods_info  end-->
+				</div>
+				<!--goods4end-->
+
+				<!--goods5 begin-->
+				<div class="goods5">
+					<div class="hotgoods" style="background: url(http://images.zhiwo.com/product/2015/1015/2617018149436783192.jpg);">
+						<span>保湿</span> <span class="span1">提拉紧致</span> <span class="span2">去干纹</span>
+						<a href="#" class="now">&nbsp;</a>
+					</div>
+					<!--hotgoods end-->
+
+					<div class="goods_info">
+						<div class="goods_name">
+							<a><span>5.0折</span>丽得姿核心至美活力弹润调理面膜25ml*5片,肌肤紧致有弹性。</a>
+						</div>
+
+						<div class="goods_price ">
+							<p class="price">
+								<i>￥</i>
+								<span>99</span>
+								<del>￥198.00</del>
+							</p>
+							<p class="jiarugouwuche">
+								<a href="#">加入购物车</a>
+							</p>
+						</div>
+
+						<div class="sale_tip ">
+							<p class="jutuangoujieshu">
+								<i>距团购结束</i>
+								<div id="times7" class="daojishi"></div>
+
+							</p>
+							<p class="yigoumaihshu"> <span>265 已购买</span></p>
+						</div>
+					</div>
+					<!--goods_info  end-->
+				</div>
+				<!--goods5 end-->
+
+				<!--goods6 begin-->
+				<div class="goods6">
+					<div class="hotgoods" style="background: url(http://images.zhiwo.com/product/2016/0329/5794075162393697517.jpg);">
+						<span>清洁</span> <span class="span1">控油</span> <span class="span2">保湿补水</span>
+						<a href="#" class="now">&nbsp;</a>
+					</div>
+					<!--hotgoods end-->
+
+					<div class="goods_info">
+						<div class="goods_name">
+							<a><span>3.0折</span>丽得姿核心至美活力弹润调理面膜25ml*5片,肌肤紧致有弹性。</a>
+						</div>
+
+						<div class="goods_price ">
+							<p class="price">
+								<i>￥</i>
+								<span>42</span>
+								<del>￥138.00</del>
+							</p>
+							<p class="jiarugouwuche">
+								<a href="#">加入购物车</a>
+							</p>
+						</div>
+
+						<div class="sale_tip ">
+							<p class="jutuangoujieshu">
+								<i>距团购结束</i>
+								<div id="times8" class="daojishi"></div>
+
+							</p>
+							<p class="yigoumaihshu"> <span>265 已购买</span></p>
+						</div>
+					</div>
+					<!--goods_info  end-->
+
+				</div>
+				<!--goods6 end-->
+
+				<!--第三行-->
+
+				<!--第四行-->
+				<!--goods4 begin-->
+				<div class="goods4">
+					<div class="hotgoods" style="background: url(http://images.zhiwo.com/product/2016/0602/6756531023143720852.jpg);">
+						<!--	<span>保湿补水</span>--><span class="span1">保湿补水</span>
+						<!--<span class="span2">保湿补水</span>-->
+						<a href="#" class="now">&nbsp;</a>
+					</div>
+					<!--hotgoods end-->
+
+					<div class="goods_info">
+						<div class="goods_name">
+							<a><span>7.0折</span>丽得姿核心至美活力弹润调理面膜25ml*5片,肌肤紧致有弹性。</a>
+						</div>
+
+						<div class="goods_price ">
+							<p class="price">
+								<i>￥</i>
+								<span>48</span>
+								<del>￥69.00</del>
+							</p>
+							<p class="jiarugouwuche">
+								<a href="#">加入购物车</a>
+							</p>
+						</div>
+
+						<div class="sale_tip ">
+							<p class="jutuangoujieshu">
+								<i>距团购结束</i>
+								<div id="times9" class="daojishi"></div>
+
+							</p>
+							<p class="yigoumaihshu"> <span>265 已购买</span></p>
+						</div>
+					</div>
+					<!--goods_info  end-->
+				</div>
+				<!--goods4end-->
+
+				<!--goods5 begin-->
+				<div class="goods5">
+					<div class="hotgoods" style="background: url(http://images.zhiwo.com/product/2016/0118/281627669629249501.jpg);">
+						<span>补水</span> <span class="span1">保湿</span>
+						<!--<span class="span2">保湿补水</span>-->
+						<a href="#" class="now">&nbsp;</a>
+					</div>
+					<!--hotgoods end-->
+
+					<div class="goods_info">
+						<div class="goods_name">
+							<a><span>4.9折</span>丽得姿核心至美活力弹润调理面膜25ml*5片,肌肤紧致有弹性。</a>
+						</div>
+
+						<div class="goods_price ">
+							<p class="price">
+								<i>￥</i>
+								<span>82</span>
+								<del>￥168.00</del>
+							</p>
+							<p class="jiarugouwuche">
+								<a href="#">加入购物车</a>
+							</p>
+						</div>
+
+						<div class="sale_tip ">
+							<p class="jutuangoujieshu">
+								<i>距团购结束</i>
+								<div id="times10" class="daojishi"></div>
+
+							</p>
+							<p class="yigoumaihshu"> <span>265 已购买</span></p>
+						</div>
+					</div>
+					<!--goods_info  end-->
+				</div>
+				<!--goods5 end-->
+
+				<!--goods6 begin-->
+				<div class="goods6">
+					<div class="hotgoods" style="background: url(http://images.zhiwo.com/product/2016/1101/4300561901748695174.jpg);">
+						<span>补水</span> <span class="span1">保湿</span> <span class="span2">润肤</span>
+						<a href="#" class="now">&nbsp;</a>
+					</div>
+					<!--hotgoods end-->
+
+					<div class="goods_info">
+						<div class="goods_name">
+							<a><span>6.0折</span>丽得姿核心至美活力弹润调理面膜25ml*5片,肌肤紧致有弹性。</a>
+						</div>
+
+						<div class="goods_price ">
+							<p class="price">
+								<i>￥</i>
+								<span>59</span>
+								<del>￥99.00</del>
+							</p>
+							<p class="jiarugouwuche">
+								<a href="#">加入购物车</a>
+							</p>
+						</div>
+
+						<div class="sale_tip ">
+							<p class="jutuangoujieshu">
+								<i>距团购结束</i>
+								<div id="times11" class="daojishi"></div>
+
+							</p>
+							<p class="yigoumaihshu"> <span>265 已购买</span></p>
+						</div>
+					</div>
+					<!--goods_info  end-->
+
+				</div>
+				<!--goods6 end-->
+				<!--第四行-->
+
+				<!--第五行-->
+				<!--goods4 begin-->
+				<div class="goods4">
+					<div class="hotgoods" style="background: url(http://images.zhiwo.com/product/2016/0912/16140351485309657720.jpg);">
+						<span>补水</span> <span class="span1">保湿</span> <span class="span2">舒缓</span>
+						<a href="#" class="now">&nbsp;</a>
+					</div>
+					<!--hotgoods end-->
+
+					<div class="goods_info">
+						<div class="goods_name">
+							<a><span>6.1折</span>丽得姿核心至美活力弹润调理面膜25ml*5片,肌肤紧致有弹性。</a>
+						</div>
+
+						<div class="goods_price ">
+							<p class="price">
+								<i>￥</i>
+								<span>49</span>
+								<del>￥80.00</del>
+							</p>
+							<p class="jiarugouwuche">
+								<a href="#">加入购物车</a>
+							</p>
+						</div>
+
+						<div class="sale_tip ">
+							<p class="jutuangoujieshu">
+								<i>距团购结束</i>
+								<div id="times12" class="daojishi"></div>
+
+							</p>
+							<p class="yigoumaihshu"> <span>265 已购买</span></p>
+						</div>
+					</div>
+					<!--goods_info  end-->
+				</div>
+				<!--goods4end-->
+
+				<!--goods5 begin-->
+				<div class="goods5">
+					<div class="hotgoods" style="background: url(http://images.zhiwo.com/product/2016/0809/1871011381386407395.jpg);">
+						<span>清洁</span> <span class="span1">保湿</span> <span class="span2">润肤</span>
+						<a href="#" class="now">&nbsp;</a>
+					</div>
+					<!--hotgoods end-->
+
+					<div class="goods_info">
+						<div class="goods_name">
+							<a><span>7.7折</span>丽得姿核心至美活力弹润调理面膜25ml*5片,肌肤紧致有弹性。</a>
+						</div>
+
+						<div class="goods_price ">
+							<p class="price">
+								<i>￥</i>
+								<span>27</span>
+								<del>￥35.00</del>
+							</p>
+							<p class="jiarugouwuche">
+								<a href="#">加入购物车</a>
+							</p>
+						</div>
+
+						<div class="sale_tip ">
+							<p class="jutuangoujieshu">
+								<i>距团购结束</i>
+								<div id="times13" class="daojishi"></div>
+
+							</p>
+							<p class="yigoumaihshu"> <span>265 已购买</span></p>
+						</div>
+					</div>
+					<!--goods_info  end-->
+				</div>
+				<!--goods5 end-->
+
+				<!--goods6 begin-->
+				<div class="goods6">
+					<div class="hotgoods" style="background: url(http://images.zhiwo.com/product/2016/0614/7903492155201252022.jpg);">
+						<span>清洁</span> <span class="span1">补水</span> <span class="span2">保湿</span>
+						<a href="#" class="now">&nbsp;</a>
+					</div>
+					<!--hotgoods end-->
+
+					<div class="goods_info">
+						<div class="goods_name">
+							<a><span>5.0折</span>丽得姿核心至美活力弹润调理面膜25ml*5片,肌肤紧致有弹性。</a>
+						</div>
+
+						<div class="goods_price ">
+							<p class="price">
+								<i>￥</i>
+								<span>49</span>
+								<del>￥98.00</del>
+							</p>
+							<p class="jiarugouwuche">
+								<a href="#">加入购物车</a>
+							</p>
+						</div>
+
+						<div class="sale_tip ">
+							<p class="jutuangoujieshu">
+								<i>距团购结束</i>
+								<div id="times14" class="daojishi"></div>
+
+							</p>
+							<p class="yigoumaihshu"> <span>265 已购买</span></p>
+						</div>
+					</div>
+					<!--goods_info  end-->
+
+				</div>
+				<!--goods6 end-->
+
+				<!--第五行-->
+
+				<!--第六行-->
+
+				<!--goods4 begin-->
+				<div class="goods4">
+					<div class="hotgoods" style="background: url(http://images.zhiwo.com/product/2016/0602/2768659313338205201.jpg);">
+						<span>保湿补水</span> <span class="span1">收缩毛孔</span>
+						<!--<span class="span2">保湿补水</span>-->
+						<a href="#" class="now">&nbsp;</a>
+					</div>
+					<!--hotgoods end-->
+
+					<div class="goods_info">
+						<div class="goods_name">
+							<a><span>4.1折</span>丽得姿核心至美活力弹润调理面膜25ml*5片,肌肤紧致有弹性。</a>
+						</div>
+
+						<div class="goods_price ">
+							<p class="price">
+								<i>￥</i>
+								<span>59</span>
+								<del>￥145.00</del>
+							</p>
+							<p class="jiarugouwuche">
+								<a href="#">加入购物车</a>
+							</p>
+						</div>
+
+						<div class="sale_tip ">
+							<p class="jutuangoujieshu">
+								<i>距团购结束</i>
+								<div id="times15" class="daojishi"></div>
+
+							</p>
+							<p class="yigoumaihshu"> <span>265 已购买</span></p>
+						</div>
+					</div>
+					<!--goods_info  end-->
+				</div>
+				<!--goods4end-->
+
+				<!--goods5 begin-->
+				<div class="goods5">
+					<div class="hotgoods" style="background: url(http://images.zhiwo.com/product/2015/0906/13298050290471465098.jpg);">
+						<!--	<span>保湿补水</span>--><span class="span1">香氛</span>
+						<!--<span class="span2">保湿补水</span>-->
+						<a href="#" class="now">&nbsp;</a>
+					</div>
+					<!--hotgoods end-->
+
+					<div class="goods_info">
+						<div class="goods_name">
+							<a><span>3.8折</span>丽得姿核心至美活力弹润调理面膜25ml*5片,肌肤紧致有弹性。</a>
+						</div>
+
+						<div class="goods_price ">
+							<p class="price">
+								<i>￥</i>
+								<span>168</span>
+								<del>￥440.00</del>
+							</p>
+							<p class="jiarugouwuche">
+								<a href="#">加入购物车</a>
+							</p>
+						</div>
+
+						<div class="sale_tip ">
+							<p class="jutuangoujieshu">
+								<i>距团购结束</i>
+								<div id="times16" class="daojishi"></div>
+
+							</p>
+							<p class="yigoumaihshu"> <span>265 已购买</span></p>
+						</div>
+					</div>
+					<!--goods_info  end-->
+				</div>
+				<!--goods5 end-->
+
+				<!--goods6 begin-->
+				<div class="goods6">
+					<div class="hotgoods" style="background: url(http://images.zhiwo.com/product/2016/0316/17660173495200420754.jpg);">
+						<!--	<span>保湿补水</span>--><span class="span1">眼部造型</span>
+						<!--<span class="span2">保湿补水</span>-->
+						<a href="#" class="now">&nbsp;</a>
+					</div>
+					<!--hotgoods end-->
+
+					<div class="goods_info">
+						<div class="goods_name">
+							<a><span>2.8折</span>丽得姿核心至美活力弹润调理面膜25ml*5片,肌肤紧致有弹性。</a>
+						</div>
+
+						<div class="goods_price ">
+							<p class="price">
+								<i>￥</i>
+								<span>25</span>
+								<del>￥88.00</del>
+							</p>
+							<p class="jiarugouwuche">
+								<a href="#">加入购物车</a>
+							</p>
+						</div>
+
+						<div class="sale_tip ">
+							<p class="jutuangoujieshu">
+								<i>距团购结束</i>
+								<div id="times17" class="daojishi"></div>
+
+							</p>
+							<p class="yigoumaihshu"> <span>265 已购买</span></p>
+						</div>
+					</div>
+					<!--goods_info  end-->
+
+				</div>
+				<!--goods6 end-->
+
+				<!--第六行-->
+
+			</div>
+			<!--goodlist-->
+
+			<div class="footer-search">
+				<div class="search">
+					<form action="" method="get">
+						<div class="kuan"><input name="" type="text" placeholder="请输入关键字" /></div>
+						<!--搜索框-->
+						<div class="an"><input name="" type="button" value="搜索" /></div>
+						<!--搜索按钮-->
+					</form>
+				</div>
+				<div class="search-word">
+					<ul>
+						<a href="#">
+							<li>保湿</li>
+						</a>
+						<div class="line"></div>
+						<a href="#">
+							<li>面膜</li>
+						</a>
+						<div class="line"></div>
+						<a href="#">
+							<li>洗面奶</li>
+						</a>
+						<div class="line"></div>
+						<a href="#">
+							<li>补水</li>
+						</a>
+						<div class="line"></div>
+						<a href="#">
+							<li>香水</li>
+						</a>
+						<div class="line"></div>
+						<a href="#">
+							<li>眼霜</li>
+						</a>
+						<div class="line"></div>
+						<a href="#">
+							<li>口红</li>
+						</a>
+					</ul>
+				</div>
+			</div>
+
+			<div class="footer-span">
+				<div class="footer-span-title-1">
+
+					<dl>
+						<dt><b>真品保证</b></dt>
+						<dd>品牌合作</dd>
+						<dd>严格把关</dd>
+						<dd>百度投资</dd>
+						<dd>全球品牌直供</dd>
+					</dl>
+					<dl>
+						<dt><b>30天包退</b></dt>
+						<dd>退换货政策</dd>
+						<dd>办理退换货</dd>
+						<dd>售后服务</dd>
+					</dl>
+					<dl>
+						<dt><b>2件包邮</b></dt>
+						<dd>配送政策</dd>
+						<dd>快递查询</dd>
+					</dl>
+					<dl>
+						<dt><b>药妆专柜</b></dt>
+						<dd>肤质判定</dd>
+						<dd>肌肤问题</dd>
+						<dd>达人推荐</dd>
+						<dd>护肤常识</dd>
+					</dl>
+					<dl>
+						<dt><b>关于知我</b></dt>
+						<dd>知我介绍</dd>
+						<dd>商务合作</dd>
+						<dd>友情链接</dd>
+						<dd>开放API</dd>
+					</dl>
+					<dl>
+						<dt><b>新手指南</b></dt>
+						<dd>购物流程</dd>
+						<dd>支付方式</dd>
+						<dd>化妆品品牌大全</dd>
+					</dl>
+					<dl>
+						<dt><b>联系方式</b></dt>
+						<dd>在线客服咨询</dd>
+						<dt><b>支付方式</b></dt>
+						<dd><span>400-630-1018</span></dd>
+						<dd><span>010-65389618</span></dd>
+					</dl>
+					<dl>
+						<dt><b>知我微信商城</b></dt>
+						<dd><img src="img/android_ewm.png"></dd>
+					</dl>
+				</div>
+			</div>
+
+			<div class="footer">
+				<div class="footer-title-1">
+					<img src="img/footer-title_1.png" />
+				</div>
+				<div class="footer-title-2">
+					<img src="img/footer-title_2.png" />
+				</div>
+			</div>
+
+
+			<div class="zuocebianlan">
+				<div class="side_nav" style="display:;">
+					<ul>
+
+						<li class="snav_zhiwo_index">
+							<a href="#">
+								<span style="display: block;">知我</span>
+								<span>首页 </span>
+							</a>
+						</li>
+
+						<li class="snav_main_push">
+							<a href="#dd">
+								<span>今日头条</span>
+							</a>
+						</li>
+
+						<li class="snav_group">
+							<a href="#yxm">
+								<span>品牌团</span>
+							</a>
+						</li>
+
+						<li class="snav_today_deals">
+							<a href="#shangxindanpin">
+								<span>上新单品</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+
+
+			<div class="youcebianlan">
+				<div class="sidebar" id="sidebar">
+					<div class="sidebar_panel">
+						<ul class="sidebar_panel_partone">
+							<li id="sidebar_login" class="sidebar_item sidebar_login">
+								<a class="sitem_btn" onMouseOver="javascript:show(this,'login');" onMouseOut="hide(this,'login')" href="javascript:;">
+									<i class="sitem_btnbg"></i>
+								</a>
+
+								<div class="sidebar_tooltip" id="login" style="position:absolute;display:none;border:1px solid silver;background: ; margin-left:-110px ;">
+									<a href="/account/login" rel="nofollow">登录</a><span>|</span>
+									<a href="/account/signup" rel="nofollow">注册</a>
+									<i class="triangle"></i>
+								</div>
+								<!--<div class="sidebar_tooltip" >
+						
+					</div>-->
+							</li>
+							<li id="sidebar_shopcar" class="sidebar_item sidebar_shopcar">
+								<a class="sitem_btn" href="javascript:;">
+									<i class="sitem_btnbg"></i>
+									<span class="sshopcar_text">购物车</span>
+									<span class="sshopcar_amout">0</span>
+								</a>
+							</li>
+							<li id="sidebar_collect" class="sidebar_item sidebar_collect">
+								<a class="sitem_btn" onMouseOver="javascript:show(this,'collect');" onMouseOut="hide(this,'collect')" href="javascript:;">
+									<i class="sitem_btnbg"></i>
+								</a>
+								<div class="sidebar_tooltip" id="collect" style="margin-left:-110px ;">
+									<span>我的收藏</span>
+									<i class="triangle"></i>
+								</div>
+							</li>
+							<li id="sidebar_foot" class="sidebar_item sidebar_foot">
+								<a class="sitem_btn" onMouseOver="javascript:show(this,'foot');" onMouseOut="hide(this,'foot')" href="javascript:;">
+									<i class="sitem_btnbg"></i>
+								</a>
+								<div class="sidebar_tooltip" id="foot" style="margin-left:-110px ;">
+									<span>我看过的</span>
+									<i class="triangle"></i>
+								</div>
+							</li>
+						</ul>
+						<ul class="sidebar_panel_parttwo">
+							<li id="sidebar_wechat" class="sidebar_item sidebar_wechat">
+								<a class="sitem_btn" onMouseOver="javascript:show(this,'wechat');" onMouseOut="hide(this,'wechat')" href=" #">
+									<i class="sitem_btnbg"></i>
+								</a>
+								<div class="sidebar_tooltip clearfix" id="wechat">
+									<div class="sidebar_ewm_box1">
+										<img src="http://mp.weixin.baifendian.com/qr/zhiwo/getQr?153593571" alt="知我微信商城二维码">
+										<span>知我微信商城</span>
+										<i class="triangle"></i>
+									</div>
+									<div class="sidebar_ewm_box2">
+										<img src="http://images.zhiwo.com/product/2016/0523/android_ewm.png" alt="Android版下载">
+										<span>Android版APP下载</span>
+										<i class="triangle"></i>
+									</div>
+									<div class="sidebar_ewm_box3">
+										<img src="http://images.zhiwo.com/product/2016/0523/iphone_ewm.png" alt="Android版下载">
+										<span>iPhone版APP下载</span>
+										<i class="triangle"></i>
+									</div>
+								</div>
+
+							</li>
+							<li id="sidebar_servers" class="sidebar_item sidebar_servers">
+								<a class="sitem_btn" onMouseOver="javascript:show(this,'server');" onMouseOut="hide(this,'server')" href="javascript:;">
+									<i class="sitem_btnbg"></i>
+								</a>
+								<div class="sidebar_tooltip" id="server" style="margin-left:-110px ;">
+									<span>客服中心</span>
+									<i class="triangle"></i>
+								</div>
+							</li>
+							<li id="sidebar_top" class="sidebar_item sidebar_top">
+								<a class="sitem_btn" href="#top">
+									<i class="up_triangle"></i>
+									<span class="go_top">TOP</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="sidebar_content" id="sidebar_content" style="left: 35px;">
+						<div class="nav_content" id="sidebar_shopcar_cont"></div>
+						<div class="nav_content" id="sidebar_collect_cont"></div>
+						<div class="nav_content" id="sidebar_foot_cont"></div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</body>
+	<script src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+	<script>
+		$(function() {
+			$('.left').click(function() {
+				var left = $('.box').scrollLeft();
+				$('.box').scrollLeft(left - 1100);
+			})
+			$('.right').click(function() {
+				var right = $('.box').scrollLeft();
+				$('.box').scrollLeft(right + 1100);
+			})
+		})
+	</script>
+
+
+	<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+//		 	var h3_height = $("h3").offset().top;
+			$(window).scroll(function() {
+
+				var this_scrollTop = $(this).scrollTop();
+
+				if(this_scrollTop > 600) {
+					$(".side_nav").show();
+
+				} else if(this_scrollTop <400 && this_scrollTop > 0) {
+					$(".side_nav").hide();
+
+				}
+
+			});
+
+		});
+	</script>
+
+	<script>
+		function show(obj, id) {
+			var objDiv = $("#" + id + "");
+			$(objDiv).css("display", "block");
+			$(objDiv).css("margin-right", "100px");
+			// $(objDiv).css("left", event.clientX); 
+			// $(objDiv).css("top", event.clientY + 10); 
+			//
+
+		}
+
+		function hide(obj, id) {
+			var objDiv = $("#" + id + "");
+			$(objDiv).css("display", "none");
+		}
+	</script>
+
+
+	<!--倒计时-->
+	<script>
+		setInterval("timer()", 1000); // 每隔1S执行一次
+		function timer() {
+			var ts = (new Date(2017, 0, 12, 23, 0, 0)) - (new Date()); //设置目标时间，并计算剩余的毫秒数
+			var dd = parseInt(ts / 1000 / 60 / 60 / 24, 10); //计算剩余天数 
+			var hh = parseInt(ts / 1000 / 60 / 60 % 24, 10); //计算剩余小时 
+			var mm = parseInt(ts / 1000 / 60 % 60, 10); //计算剩余分钟 
+			var ss = parseInt((ts / 1000) % 60, 10); //秒数 
+			dd = checkTime(dd);
+			hh = checkTime(hh);
+			mm = checkTime(mm);
+			ss = checkTime(ss); //重写数字
+			$("#less_day").html(dd);
+			$("#less_hour").html(hh);
+			$("#less_minutes").html(mm);
+			$("#less_seconds").html(ss);
+		}
+
+		function checkTime(i) {
+			if(i < 10) {
+				i = "0" + i;
+			}
+			return i;
+		}
+	</script>
+ <script>
+
+        //添加购物车事件
+        $(".sitem_btn").bind('click',function(){
+            beheActiveEvent({at:"buy",src:"1697005908",cid:"",sid:"2340.2227"});
+        });
+        $(".shooping_cart").bind('click',function(){
+            beheActiveEvent({at:"buy",src:"1697005908",cid:"",sid:"2340.2227"});
+        });
+     
+</script>
+
+
+	<script type="text/javascript">
+		$(function() {
+
+			$("#li1").mouseover(function() {
+
+				$(this).addClass('tli2');
+				$("#li2").removeClass('tli2');
+				$("#li3").removeClass('tli2');
+				$("#li4").removeClass('tli2');
+				$("#tab_con1").show();
+				$("#tab_con2").hide();
+				$("#tab_con3").hide();
+				$("#tab_con4").hide();
+				$('    #rightbrand  div').removeClass('tdiv');
+					$('    #rightbrand  div').eq($(this).index()).addClass('tdiv');
+				
+				
+			})
+
+			$("#li2").mouseover(function() {
+
+				$(this).addClass('tli2');
+				$("#li1").removeClass('tli2');
+				$("#li3").removeClass('tli2');
+				$("#li4").removeClass('tli2');
+				$("#tab_con2").show();
+				$("#tab_con1").hide();
+				$("#tab_con3").hide();
+				$("#tab_con4").hide();
+				$('    #rightbrand  div').removeClass('tdiv');
+					$('    #rightbrand  div').eq($(this).index()).addClass('tdiv');
+			})
+
+			$("#li3").mouseover(function() {
+
+				$(this).addClass('tli2');
+				$("#li2").removeClass('tli2');
+				$("#li1").removeClass('tli2');
+				$("#li4").removeClass('tli2');
+				$("#tab_con1").hide();
+				$("#tab_con2").hide();
+				$("#tab_con3").show();
+				$("#tab_con4").hide();
+				$('    #rightbrand  div').removeClass('tdiv');
+					$('    #rightbrand  div').eq($(this).index()).addClass('tdiv');
+			})
+
+			$("#li4").mouseover(function() {
+
+				$(this).addClass('tli2');
+				$("#li2").removeClass('tli2');
+				$("#li3").removeClass('tli2');
+				$("#li1").removeClass('tli2');
+				$("#tab_con1").hide();
+				$("#tab_con2").hide();
+				$("#tab_con3").hide();
+				$("#tab_con4").show();
+				$('    #rightbrand  div').removeClass('tdiv');
+					$('    #rightbrand  div').eq($(this).index()).addClass('tdiv');
+			})
+
+		})
+	</script>
+
+	<script>
+		$(function() {
+				$('.shop').mouseover(function() {
+					$('.content').show();
+				})
+				$('.content').mouseleave(function() {
+					$('.content').hide();
+				})
+				$('.content').mouseover(function() {
+					$('.content').show();
+				})
+				$('.shop').mouseleave(function() {
+					$('.content').hide();
+				})
+			})
+//			<!--手风琴效果-->
+		$(function() {
+			$('.header-mainnavright li').mouseover(function() {
+
+				$(this).animate({
+					width: "90px"
+				});
+			})
+
+			$('.header-mainnavright li').mouseleave(function() {
+				$(this).animate({
+					width: ""
+				});
+
+			})
+
+		})
+
+//		<!--轮播效果-->
+		$(function() {
+			var i = 0;
+			var arr = ['first', 'sec', 'third'];
+
+			setInterval(function() {
+				if(i > arr.length - 1) {
+					i = 0;
+				}
+				$('.img').attr('src', 'img/' + arr[i] + '.jpg')
+				i++;
+			}, 2000)
+
+		})
+	</script>
+
+</html>
